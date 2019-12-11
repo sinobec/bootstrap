@@ -34,7 +34,7 @@
                     <a href="./aboutus.html" class="nav-link"><span class="fa fa-info fa-lg"> About</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link"><span class="fa fa-list fa-lg"> Products</span></a>
+                    <a href="product.html" class="nav-link"><span class="fa fa-list fa-lg"> Products</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"> Contact</span></a>
@@ -161,6 +161,7 @@
                 data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+                <!-- === JQuery exer A ===
                 <div class="btn-group" id="carouselButton">
                     <button class="btn btn-danger btn-sm" id="carousel-pause">
                         <span class="fa fa-pause"></span>
@@ -168,8 +169,11 @@
                     <button class="btn btn-danger btn-sm" id="carousel-play">
                         <span class="fa fa-play"></span>
                     </button>
-                    
-                </div>
+                </div> -->
+                <!-- === JQuery exer B === -->
+                <button class="btn btn-danger btn-sm" id="carouselButton">
+                    <span id="carousel-button-icon" class="fa fa-pause"></span>
+                </button>
             </div>          
         </div>  
     </div>
@@ -188,7 +192,6 @@
                         <span class="badge badge-danger">HOT</span> 
                         <span class="badge badge-pill badge-secondary">$4.99</span>
                     </h2><!-- 此处代表上边沿margin为0,以便对其图片上边沿 -->
-
                     <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                 </div>
                 
@@ -447,7 +450,7 @@
        </div>
        <div class="row justify-content-center">             
             <div class="col-auto">
-                <p>© Copyright 2018 Ristorante Con Fusion</p>
+                <p>© Copyright 2019 Ristorante Con Fusion</p>
             </div>
        </div>
     </div>
@@ -476,18 +479,35 @@ $('#radioBtn a').on('click', function(){
 })
 </script>
 <script type="text/javascript">
-$(document).ready(function(){
-    $("#mycarousel").carousel({
-        interval: 2000
-    });
-    $("#carousel-pause").click(function(){
-        $("#mycarousel").carousel('pause');
-    });
-    $("#carousel-play").click(function(){
-        $("#mycarousel").carousel('cycle');
-    });
-})
-</script>
-</body>
+// Ecer A
+// $(document).ready(function(){
+//     $("#mycarousel").carousel({
+//         interval: 2000
+//     });
+//     $("#carousel-pause").click(function(){
+//         $("#mycarousel").carousel('pause');
+//     });
+//     $("#carousel-play").click(function(){
+//         $("#mycarousel").carousel('cycle');
+//     });
+// });
 
+//Exer B
+$(document).ready(function(){
+    $("#carouselButton").click(function(){
+        if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+            $("#mycarousel").carousel('pause');
+            $("#carouselButton").children("span").removeClass('fa-pause');
+            $("#carouselButton").children("span").addClass('fa-play');
+        }
+        else if ($("#carouselButton").children("span").hasClass('fa-play')){
+            $("#mycarousel").carousel('cycle');
+            $("#carouselButton").children("span").removeClass('fa-play');
+            $("#carouselButton").children("span").addClass('fa-pause');                    
+        }
+    });
+});
+</script>
+
+</body>
 </html>
