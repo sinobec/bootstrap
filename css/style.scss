@@ -3,6 +3,8 @@ $background-dark : #512da8;
 $background-light: #9575cd;
 $background-pale: #d1c4e9;
 $carousel-height: 300px;
+$fwhite: floralwhite;
+
 
 @mixin zero-margin ($padud, $padlr) {
 	margin: 0px auto;
@@ -28,10 +30,10 @@ body {
 	@include zero-margin(20px,0px);
 }
 
-.jumborton {
+.jumbotron {
 	@include zero-margin(70px,30px);
 	background: $background-light;
-	color: floralwhite;
+	color: $fwhite;
 }
 
 address {
@@ -69,7 +71,28 @@ address {
 	bottom: 0px;
 	z-index: 1;
 }
-
+.pointer {
+	cursor: pointer;
+}
+ 
+.modal-body {
+	background-color: $background-pale;
+}
+.modal-header {
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: $background-dark;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     color: $fwhite;
+     button {
+     	color: $fwhite;
+     }
+}
 .modal-dialog {
   position: absolute;
   top: 50%;
@@ -80,15 +103,6 @@ address {
     color: #3276b1;
     background-color: #fff;
 }
-.modal-header-primary {
-	color:#fff;
-    padding:9px 15px;
-    border-bottom:1px solid #eee;
-    background-color: #428bca;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-     border-top-left-radius: 5px;
-     border-top-right-radius: 5px;
-}
+
+
+
